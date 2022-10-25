@@ -1,12 +1,7 @@
 //Variables
 const $ = selector => document.querySelector(selector)
 const selectYear = $('#year')
-const selectMarca = $('#marca')
-const selectMinimo = $('#minimo')
-const selectMaximo = $('#maximo')
-const selectPuertas = $('#puertas')
-const selectTransmision = $('#transmision')
-const selectColor = $('#color')
+const selects = document.querySelectorAll('.select')
 
 //Contenedor para los resultados
 const resultado = $('#resultado')
@@ -34,39 +29,12 @@ document.addEventListener('DOMContentLoaded',()=>{
 })
 
 //EventListener para los selects
-selectMarca.addEventListener('change', (e) =>{
-    agregarDatosBusqueda(e)
-    filtrarAuto()
-})
 
-selectYear.addEventListener('change', (e) =>{
-    agregarDatosBusqueda(e)
-    filtrarAuto()
-}) 
-
-selectMinimo.addEventListener('change', (e) =>{
-    agregarDatosBusqueda(e)
-    filtrarAuto()
-})
-
-selectMaximo.addEventListener('change', (e) =>{
-    agregarDatosBusqueda(e)
-    filtrarAuto()
-})
-
-selectPuertas.addEventListener('change', (e) =>{
-    agregarDatosBusqueda(e)
-    filtrarAuto()
-})
-
-selectTransmision.addEventListener('change', (e) =>{
-    agregarDatosBusqueda(e)
-    filtrarAuto()
-})
-
-selectColor.addEventListener('change', (e) =>{
-    agregarDatosBusqueda(e)
-    filtrarAuto()
+selects.forEach(x =>{
+    x.addEventListener('change',(e) =>{
+        agregarDatosBusqueda(e)
+        filtrarAuto();
+    })
 })
 
 //Funciones
